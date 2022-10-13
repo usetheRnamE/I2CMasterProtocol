@@ -1,0 +1,5 @@
+../Core/Src/ADC_Device.cpp:16:15:virtual const uint8_t ADC7828_Device::GetAddress()	16	static
+../Core/Src/ADC_Device.cpp:21:6:virtual void ADC7828_Device::SetPinConfig(uint8_t)	16	static
+../Core/Src/ADC_Device.cpp:26:9:virtual uint8_t ADC7828_Device::GetPinConfig()	16	static
+../Core/Src/ADC_Device.cpp:43:19:HAL_StatusTypeDef ADC7828_Device::ReadADC(uint16_t*)	32	static
+../Core/Src/ADC_Device.cpp:74:6:void ADC7828_Device::ADC_ToVolt(uint16_t, float*)	24	static

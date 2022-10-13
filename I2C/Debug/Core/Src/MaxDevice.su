@@ -1,0 +1,4 @@
+../Core/Src/MaxDevice.cpp:7:15:virtual const uint8_t Max30205_Device::GetAddress()	16	static
+../Core/Src/MaxDevice.cpp:12:6:virtual void Max30205_Device::SetPinConfig(uint8_t)	16	static
+../Core/Src/MaxDevice.cpp:17:9:virtual uint8_t Max30205_Device::GetPinConfig()	16	static
+../Core/Src/MaxDevice.cpp:35:19:HAL_StatusTypeDef Max30205_Device::MaxReadTemp(float*)	40	static
