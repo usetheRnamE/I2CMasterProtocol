@@ -11,22 +11,17 @@ inline const uint8_t ADC7828_Device::GetRes()
    return resolution;
 }
 
-inline const float ADC7828_Device::GetVoltDivCoef()
-{
-   return voltDivCoef;
-}
-
-inline const uint8_t ADC7828_Device::GetAddress()
+const uint8_t ADC7828_Device::GetAddress()
 {
    return address;
 }
 
-inline void ADC7828_Device::SetPinConfig(uint8_t pinRegister)
+void ADC7828_Device::SetPinConfig(uint8_t pinRegister)
 {
 	pinConfig = pinRegister;
 }
 
-inline uint8_t ADC7828_Device::GetPinConfig()
+uint8_t ADC7828_Device::GetPinConfig()
 {
 	return pinConfig;
 }
@@ -49,14 +44,14 @@ HAL_StatusTypeDef ADC7828_Device::ReadADC(uint16_t *data)
 	uint8_t adData[2]; // data to receive
 
 	// Send configuration register data
-	returnVal = HAL_I2C_Master_Transmit(&hi2c1, (uint16_t)(address<<1), &pinConfig, 1, 50); // 0, cuz we are transmitting
+	returnVal = HAL_I2C_Master_Transmit(&hi2c1,static_cast<uint16_t>(address<<1), &pinConfig, 1, 50); // 0, cuz we are transmitting
 	if(returnVal != HAL_OK)
 	{
 		return returnVal; //return an error
 	}
 
 	// Receive voltage data, two bytes
-	returnVal = HAL_I2C_Master_Receive(&hi2c1, (uint16_t)(address<<1)|0x01, adData, 2, 50); // (| 0x01), cuz we are receiving
+	returnVal = HAL_I2C_Master_Receive(&hi2c1, static_cast<uint16_t>(address<<1|0x01), adData, 2, 50); // (| 0x01), cuz we are receiving
 	if(returnVal != HAL_OK)
 	{
 		return returnVal;

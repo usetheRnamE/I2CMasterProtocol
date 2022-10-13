@@ -2,6 +2,8 @@
 
 #include "main.h"
 #include "DevicesInterface.h"
+#include "stm32f4xx_hal_i2c.h"
+#include "stm32f4xx_hal_def.h"
 
 extern I2C_HandleTypeDef hi2c1;
 
@@ -11,13 +13,11 @@ private:
 const float vRef = 2.492; //internal volt ref
 const uint8_t resolution = 12;
 const uint8_t address = 0x49; //left-shifted address
-const float voltDivCoef = 1.0f;
 
 //getters/setters
 public:
 const float GetVRef();
 const uint8_t GetRes();
-const float GetVoltDivCoef();
 
 const uint8_t GetAddress() override;
 void SetPinConfig(uint8_t pinRegister)override;

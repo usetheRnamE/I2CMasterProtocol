@@ -27,6 +27,8 @@ int main(void)
   float voltage = 0; // store a converted adc val
   float temperature = 0 ;
 
+  float voltDivCoef = 1.0f;
+
   ADC7828_Device* adcDevice = new ADC7828_Device;
   Max30205_Device* maxDevice = new  Max30205_Device;
 
@@ -37,7 +39,8 @@ int main(void)
 
 	SetDevPinConfig(adcDevice, pinReg.ADC7828);
 	adcDevice->ReadADC(&adData);
-	adData *= adcDevice->GetVoltDivCoef(); // voltage divider
+
+	adData *= voltDivCoef; // voltage divider
 
 	adcDevice->ADC_ToVolt(adData, &voltage);
 

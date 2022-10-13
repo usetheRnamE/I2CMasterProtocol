@@ -1,18 +1,20 @@
 #include "MaxDevice.h"
 
+extern I2C_HandleTypeDef hi2c1;
+
 #pragma region GettersAndSetters
 
-inline const uint8_t Max30205_Device::GetAddress()
+const uint8_t Max30205_Device::GetAddress()
 {
    return address;
 }
 
-inline void Max30205_Device::SetPinConfig(uint8_t pinRegister)
+void Max30205_Device::SetPinConfig(uint8_t pinRegister)
 {
 	pinConfig = pinRegister;
 }
 
-inline uint8_t Max30205_Device::GetPinConfig()
+uint8_t Max30205_Device::GetPinConfig()
 {
 	return pinConfig;
 }

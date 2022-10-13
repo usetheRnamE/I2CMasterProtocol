@@ -2,7 +2,8 @@
 
 #include "main.h"
 #include "DevicesInterface.h"
-
+#include "stm32f4xx_hal_i2c.h"
+#include "stm32f4xx_hal_def.h"
 
 extern I2C_HandleTypeDef hi2c1;
 
